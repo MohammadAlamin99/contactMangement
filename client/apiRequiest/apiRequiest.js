@@ -6,7 +6,7 @@ let BaseURL = "http://localhost:5000";
 export  async function addContactRequest(name,email,phone,address,photo) {
     try {
         let reqBody ={name:name, email:email, phone:phone, address:address,photo:photo};
-        let result = await axios.post(BaseURL+'/api/v1/addContact',reqBody);
+        let result = await axios.post('https://contact-mangement-theta.vercel.app/api/v1/addContact',reqBody);
         let data =  result;
         return data;
     }
@@ -18,7 +18,7 @@ export  async function addContactRequest(name,email,phone,address,photo) {
 
  export async function allContactRequest() {
     try {
-        let result = await axios.get(BaseURL+'/api/v1/allContact');
+        let result = await axios.get('https://contact-mangement-theta.vercel.app/api/v1/allContact');
         let data =  result.data['data'];
         return data;
     }
@@ -30,7 +30,7 @@ export  async function addContactRequest(name,email,phone,address,photo) {
 
  export  async function deleteContactRequest(id) {
     try {
-        let result = await axios.get(BaseURL+'/api/v1/deleteCon/'+id);
+        let result = await axios.get('https://contact-mangement-theta.vercel.app/api/v1/deleteCon/'+id);
         let data = result
         return data;
     }
@@ -45,7 +45,7 @@ export  async function addContactRequest(name,email,phone,address,photo) {
  export  async function updateContactRequest(id,name,email,phone,address,photo) {
     try {
         let reqBody ={id:id,name:name, email:email, phone:phone, address:address,photo:photo};
-        let result = await axios.post(BaseURL+'/api/v1/updateCon',reqBody);
+        let result = await axios.post('https://contact-mangement-theta.vercel.app/api/v1/updateCon',reqBody);
         return result
     }
     catch (e) {
